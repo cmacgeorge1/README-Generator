@@ -41,7 +41,7 @@ const questions = [
         choices: ["MIT", "ISC", "APACHE 2.O", "NONE"]
     },
     {
-        message: "Would you like to contribute to this project?",
+        message: "contributers to the project?",
         name: "contribute",
         type: "input"
     },
@@ -63,6 +63,38 @@ function userChoice () {
     inquirer.prompt(questions)
     .then(function(userInput){
         console.log(userInput)
+        var readMeTxt = `
+# ${userInput.title}
+## ${userInput.contribute}
+### license:
+![license](https://img.shields.io/badge/license-${userInput.license}-blue.svg)
+### developer profile:
+![profile](https://github.com/${userInput.github})
+## Description
+${userInput.description}
+### Tabel of Contents:
+*[installation](#installation)
+*[test](#test)
+*[usage](#usage)
+*[questions](#questions)
+
+## Installation
+${userInput.installation}
+
+## Test
+${userInput.test}
+
+## Usage
+${userInput.usage}
+
+## Questions
+Please feel free to reach out with any questions
+${userInput.questions}`
+    
+    console.log(readMeTxt)
+    fs.writeFile("./README.md", readMeTxt, function(){
+        console.log("file generator")
     })
+})
 } 
 userChoice()
