@@ -59,3 +59,10 @@ const questions = [
 
 
 // Use inquirer to prompt users with questions
+function userChoice () {
+    inquirer.prompt(questions)
+    .then(function(userInput){
+        console.log(userInput)
+    })
+} 
+userChoice()
