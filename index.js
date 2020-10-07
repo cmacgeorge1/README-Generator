@@ -65,17 +65,26 @@ function userChoice () {
         console.log(userInput)
         var readMeTxt = `
 # ${userInput.title}
+
 ## ${userInput.contribute}
+
 ### license:
 ![license](https://img.shields.io/badge/license-${userInput.license}-blue.svg)
+
 ### developer profile:
-![profile](https://github.com/${userInput.github})
+https://github.com/${userInput.github}
+
 ## Description
 ${userInput.description}
+
 ### Tabel of Contents:
+
 *[installation](#installation)
+
 *[test](#test)
+
 *[usage](#usage)
+
 *[questions](#questions)
 
 ## Installation
